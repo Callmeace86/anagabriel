@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Gabriel - Official Fan Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'gold': '#D4AF37',
+                        'deep-red': '#8B0000',
+                        'warm-gold': '#F4E4BC',
+                        'dark-gold': '#B8860B',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.8s ease-out',
+                        'fade-in-right': 'fadeInRight 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'slide-in': 'slideIn 0.3s ease-out',
+                        'slide-out': 'slideOut 0.3s ease-in',
+                        'spin-slow': 'spin 3s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hamburger {
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        .mobile-menu-item {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active .mobile-menu-item {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .mobile-menu.active .mobile-menu-item:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.active .mobile-menu-item:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu.active .mobile-menu-item:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu.active .mobile-menu-item:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu.active .mobile-menu-item:nth-child(5) { transition-delay: 0.5s; }
+
+        /* Language Dropdown */
+        .language-dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Music Player Styles */
+        .music-player {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #D4AF37 0%, #B8860B 100%);
+            height: 4px;
+            border-radius: 2px;
+            transition: width 0.1s ease;
+        }
+
+        .volume-slider {
+            background: linear-gradient(90deg, #D4AF37 0%, #B8860B 100%);
+        }
+
+        .music-controls button:hover {
+            transform: scale(1.1);
+        }
+
+        .music-controls button:active {
+            transform: scale(0.95);
+        }
+
+        .album-art {
+            animation: spin-slow 20s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .album-art.playing {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-deep-red to-gold rounded-full flex items-center justify-center">
+                        <i class="fas fa-music text-white"></i>
+                    </div>
+                    <span class="font-playfair text-2xl font-bold text-deep-red">Ana Gabriel</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-gold transition-colors" data-translate="nav.home">Home</a>
+                    <a href="#cards" class="text-gray-700 hover:text-gold transition-colors" data-translate="nav.cards">Fan Cards</a>
+                    <a href="#about" class="text-gray-700 hover:text-gold transition-colors" data-translate="nav.about">About</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-gold transition-colors" data-translate="nav.gallery">Gallery</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector -->
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-gray-700 hover:text-gold transition-colors" id="language-btn">
+                            <i class="fas fa-globe text-lg"></i>
+                            <span id="current-language">EN</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="language-dropdown absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2" id="language-dropdown">
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="en">
+                                <span class="flag">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="es">
+                                <span class="flag">🇪🇸</span>
+                                <span>Español</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="fr">
+                                <span class="flag">🇫🇷</span>
+                                <span>Français</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="de">
+                                <span class="flag">🇩🇪</span>
+                                <span>Deutsch</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="it">
+                                <span class="flag">🇮🇹</span>
+                                <span>Italiano</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="pt">
+                                <span class="flag">🇵🇹</span>
+                                <span>Português</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="ru">
+                                <span class="flag">🇷🇺</span>
+                                <span>Русский</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="zh">
+                                <span class="flag">🇨🇳</span>
+                                <span>中文</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="ja">
+                                <span class="flag">🇯🇵</span>
+                                <span>日本語</span>
+                            </button>
+                            <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center space-x-3" data-lang="ar">
+                                <span class="flag">🇸🇦</span>
+                                <span>العربية</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="md:hidden text-gray-700 hover:text-gold hamburger" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay fixed inset-0 bg-black/50 backdrop-blur-sm z-40" id="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden" id="mobile-menu">
+        <div class="flex flex-col h-full">
+            <!-- Mobile Menu Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-deep-red to-gold rounded-full flex items-center justify-center">
+                        <i class="fas fa-music text-white text-sm"></i>
+                    </div>
+                    <span class="font-playfair text-xl font-bold text-deep-red">Ana Gabriel</span>
+                </div>
+                <button class="text-gray-500 hover:text-gray-700 transition-colors" id="close-mobile-menu">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Items -->
+            <div class="flex-1 py-8">
+                <nav class="space-y-2">
+                    <a href="#home" class="mobile-menu-item flex items-center px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-gold transition-all duration-300 border-l-4 border-transparent hover:border-gold" data-translate="nav.home">
+                        <i class="fas fa-home w-6 mr-4 text-gold"></i>
+                        <span class="font-medium">Home</span>
+                    </a>
+                    <a href="#cards" class="mobile-menu-item flex items-center px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-gold transition-all duration-300 border-l-4 border-transparent hover:border-gold" data-translate="nav.cards">
+                        <i class="fas fa-id-card w-6 mr-4 text-gold"></i>
+                        <span class="font-medium">Fan Cards</span>
+                    </a>
+                    <a href="#about" class="mobile-menu-item flex items-center px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-gold transition-all duration-300 border-l-4 border-transparent hover:border-gold" data-translate="nav.about">
+                        <i class="fas fa-user w-6 mr-4 text-gold"></i>
+                        <span class="font-medium">About</span>
+                    </a>
+                    <a href="#gallery" class="mobile-menu-item flex items-center px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-gold transition-all duration-300 border-l-4 border-transparent hover:border-gold" data-translate="nav.gallery">
+                        <i class="fas fa-images w-6 mr-4 text-gold"></i>
+                        <span class="font-medium">Gallery</span>
+                    </a>
+                </nav>
+
+                <!-- Language Selector in Mobile Menu -->
+                <div class="px-6 py-4 border-t border-gray-200 mt-8">
+                    <p class="text-sm text-gray-600 mb-3" data-translate="language.select">Select Language</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="language-option text-left p-2 rounded hover:bg-gray-50 flex items-center space-x-2 text-sm" data-lang="en">
+                            <span class="flag">🇺🇸</span>
+                            <span>EN</span>
+                        </button>
+                        <button class="language-option text-left p-2 rounded hover:bg-gray-50 flex items-center space-x-2 text-sm" data-lang="es">
+                            <span class="flag">🇪🇸</span>
+                            <span>ES</span>
+                        </button>
+                        <button class="language-option text-left p-2 rounded hover:bg-gray-50 flex items-center space-x-2 text-sm" data-lang="fr">
+                            <span class="flag">🇫🇷</span>
+                            <span>FR</span>
+                        </button>
+                        <button class="language-option text-left p-2 rounded hover:bg-gray-50 flex items-center space-x-2 text-sm" data-lang="de">
+                            <span class="flag">🇩🇪</span>
+                            <span>DE</span>
+                        </button>
+                        <button class="language-option text-left p-2 rounded hover:bg-gray-50 flex items-center space-x-2 text-sm" data-lang="it">
+                            <span class="flag">🇮🇹</span>
+                            <span>IT</span>
+                        </button>
+                        <button class="language-option text-left p-2 rounded hover:bg-gray-50 flex items-center space-x-2 text-sm" data-lang="pt">
+                            <span class="flag">🇵🇹</span>
+                            <span>PT</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Footer -->
+            <div class="p-6 border-t border-gray-200">
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-3" data-translate="contact.whatsapp">Contact via WhatsApp</p>
+                    <a href="https://wa.me/2349116764864" class="inline-flex items-center justify-center w-12 h-12 bg-green-500 rounded-full text-white hover:bg-green-600 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="fixed bottom-6 right-6 music-player rounded-2xl shadow-2xl p-4 w-80 z-40" id="music-player">
+        <div class="flex items-center space-x-4 mb-3">
+            <div class="album-art w-12 h-12 bg-gradient-to-r from-deep-red to-gold rounded-full flex items-center justify-center" id="album-art">
+                <i class="fas fa-music text-white"></i>
+            </div>
+            <div class="flex-1">
+                <h4 class="font-semibold text-sm text-gray-800" id="song-title" data-translate="music.title">No Te Hago Falta</h4>
+                <p class="text-xs text-gray-600">Ana Gabriel</p>
+            </div>
+            <button class="text-gray-600 hover:text-gray-800" id="minimize-player">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+        
+        <div class="music-controls flex items-center justify-center space-x-4 mb-3">
+            <button class="bg-gradient-to-r from-deep-red to-gold text-white w-10 h-10 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-200" id="play-pause-btn">
+                <i class="fas fa-play" id="play-pause-icon"></i>
+            </button>
+        </div>
+        
+        <div class="mb-3">
+            <div class="flex items-center justify-between text-xs text-gray-600 mb-1">
+                <span id="current-time">0:00</span>
+                <span id="total-time">0:00</span>
+            </div>
+            <div class="bg-gray-200 rounded-full h-1 cursor-pointer" id="progress-container">
+                <div class="progress-bar w-0 rounded-full" id="progress-bar"></div>
+            </div>
+        </div>
+        
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-volume-down text-gray-600 text-sm"></i>
+            <input type="range" min="0" max="100" value="70" class="flex-1 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer volume-slider" id="volume-slider">
+            <i class="fas fa-volume-up text-gray-600 text-sm"></i>
+        </div>
+    </div>
+
+    <!-- Minimized Music Player -->
+    <div class="fixed bottom-6 right-6 music-player rounded-full shadow-2xl p-3 w-16 h-16 hidden" id="minimized-player">
+        <button class="w-full h-full bg-gradient-to-r from-deep-red to-gold text-white rounded-full flex items-center justify-center" id="expand-player">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 gradient-bg"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute inset-0 parallax" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvpKoLMYqbOtP1dzPU27rImubMTp7xcWEdzkAD5qogEnw0gWC-Q4hPBN_f&s=10')"></div>
+        
+        <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+            <div class="animate-fade-in-up">
+                <h1 class="font-playfair text-6xl md:text-8xl font-bold mb-6 text-shadow">Ana Gabriel</h1>
+                <p class="text-xl md:text-2xl mb-8 text-warm-gold font-light" data-translate="hero.subtitle">Exclusive Fan Cards</p>
+                <p class="text-lg mb-12 max-w-2xl mx-auto leading-relaxed" data-translate="hero.description">Own a piece of music history with our premium collection of Ana Gabriel fan cards. Limited edition designs celebrating the legendary Mexican artist.</p>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Featured Cards Section -->
+    <section id="cards" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+            <h2 class="font-playfair text-4xl md:text-5xl font-bold text-deep-red mb-4" data-translate="cards.title">Fan Membership Tiers</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-translate="cards.description">Join our exclusive Ana Gabriel fan community and unlock amazing benefits celebrating the legendary Mexican artist.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Basic Tier -->
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-on-scroll border-2 border-gray-100">
+                <div class="relative">
+                    <div class="bg-gradient-to-r from-gray-500 to-gray-600 h-64 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-star text-6xl mb-4 opacity-80"></i>
+                            <h3 class="text-2xl font-bold">BASIC</h3>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-translate="cards.starter">
+                        Starter
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-playfair text-2xl font-bold text-deep-red mb-4" data-translate="cards.basic.title">Basic Membership</h3>
+                    <ul class="space-y-3 mb-6 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.basic.newsletter">Exclusive newsletter</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.basic.badge">Digital fan badge</span>
+                        </li>
+                    </ul>
+                    <div class="text-center mb-4">
+                        <span class="text-3xl font-bold text-gold">$9.99</span>
+                        <span class="text-gray-500">/month</span>
+                    </div>
+                    <button class="w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 tier-btn" data-tier="Basic">
+                        <i class="fas fa-user-plus mr-2"></i>
+                        <span data-translate="cards.join">Join Now</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Premium Tier -->
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-on-scroll border-2 border-gold transform scale-105">
+                <div class="relative">
+                    <div class="bg-gradient-to-r from-gold to-dark-gold h-64 flex items-center justify-center">
+                        <div class="text-center text-deep-red">
+                            <i class="fas fa-crown text-6xl mb-4"></i>
+                            <h3 class="text-2xl font-bold">PREMIUM</h3>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-deep-red text-white px-3 py-1 rounded-full text-sm font-semibold" data-translate="cards.popular">
+                        Most Popular
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-playfair text-2xl font-bold text-deep-red mb-4" data-translate="cards.premium.title">Premium Membership</h3>
+                    <ul class="space-y-3 mb-6 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.premium.streams">Private stream invites</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.premium.poster">Signed poster</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.premium.basic">Everything in Basic</span>
+                        </li>
+                    </ul>
+                    <div class="text-center mb-4">
+                        <span class="text-3xl font-bold text-gold">$24.99</span>
+                        <span class="text-gray-500">/month</span>
+                    </div>
+                    <button class="w-full bg-gold hover:bg-dark-gold text-deep-red font-semibold py-3 rounded-lg transition-all duration-300 btn-glow tier-btn" data-tier="Premium">
+                        <i class="fas fa-crown mr-2"></i>
+                        <span data-translate="cards.join">Join Now</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VIP Tier -->
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-on-scroll border-2 border-deep-red">
+                <div class="relative">
+                    <div class="bg-gradient-to-r from-deep-red to-red-800 h-64 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-gem text-6xl mb-4"></i>
+                            <h3 class="text-2xl font-bold">VIP</h3>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-gold text-deep-red px-3 py-1 rounded-full text-sm font-semibold" data-translate="cards.exclusive">
+                        Exclusive
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-playfair text-2xl font-bold text-deep-red mb-4" data-translate="cards.vip.title">VIP Membership</h3>
+                    <ul class="space-y-3 mb-6 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.vip.premium">All Premium benefits</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.vip.meetgreet">Meet and greet access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span data-translate="cards.vip.shoutout">Personal fan shout-out</span>
+                        </li>
+                    </ul>
+                    <div class="text-center mb-4">
+                        <span class="text-3xl font-bold text-gold">$49.99</span>
+                        <span class="text-gray-500">/month</span>
+                    </div>
+                    <button class="w-full bg-deep-red hover:bg-red-800 text-white font-semibold py-3 rounded-lg transition-all duration-300 btn-glow tier-btn" data-tier="VIP">
+                        <i class="fas fa-gem mr-2"></i>
+                        <span data-translate="cards.join">Join Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Ana_Gabriel.jpg/640px-Ana_Gabriel.jpg" alt="Ana Gabriel Portrait" class="rounded-2xl shadow-2xl animate-float">
+                </div>
+                <div class="animate-on-scroll">
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-deep-red mb-6" data-translate="about.title">About Ana Gabriel</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6" data-translate="about.paragraph1">
+                        Ana Gabriel is one of Mexico's most beloved and successful recording artists. With a career spanning over four decades, she has sold millions of records worldwide and touched the hearts of fans across Latin America and beyond.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8" data-translate="about.paragraph2">
+                        Known for her powerful voice and emotional performances, Ana Gabriel has become an icon in Latin music, earning numerous awards and recognition for her contributions to the industry.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gold mb-2">47</div>
+                            <div class="text-gray-600" data-translate="about.years">Years of Career</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gold mb-2">40M+</div>
+                            <div class="text-gray-600" data-translate="about.records">Records Sold</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-deep-red mb-4" data-translate="gallery.title">Photo Gallery</h2>
+                <p class="text-gray-600 text-lg" data-translate="gallery.description">Memorable moments from Ana Gabriel's incredible journey</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="animate-on-scroll card-hover">
+                    <img src="https://i.ibb.co/Y4vQFgGH/images.jpg" alt="Ana Gabriel Concert" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="animate-on-scroll card-hover">
+                    <img src="https://i.ibb.co/9HjZCSvV/3215aefe-6190-4c79-bc50-c710307004ba.jpg" alt="Ana Gabriel Studio" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="animate-on-scroll card-hover">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6GHbWFJhXC09nlHEPr_5JhBe5szxwzbreBA7Bs8PsVD-xiJfKUs4ScGpT&s=10" alt="Ana Gabriel Awards" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="animate-on-scroll card-hover">
+                    <img src="https://i.ibb.co/WNxykjFC/IMG-20250701-WA0003.jpg" alt="Ana Gabriel Fans" class="w-full h-48 object-cover rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-white mb-4" data-translate="testimonials.title">What Fans Say</h2>
+                <p class="text-warm-gold text-lg" data-translate="testimonials.subtitle">Hear from our satisfied fans</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white animate-on-scroll">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="mb-4" data-translate="testimonials.review1">"These fan cards are absolutely beautiful! The quality is amazing and they arrived perfectly packaged."</p>
+                    <div class="font-semibold">- Maria Rodriguez</div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white animate-on-scroll">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="mb-4" data-translate="testimonials.review2">"As a longtime Ana Gabriel fan, these cards mean everything to me. Worth every penny!"</p>
+                    <div class="font-semibold">- Carlos Mendez</div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white animate-on-scroll">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="mb-4" data-translate="testimonials.review3">"Fast shipping and excellent customer service. The signature series is incredible!"</p>
+                    <div class="font-semibold">- Ana Gutierrez</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-red text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fas fa-music text-deep-red"></i>
+                        </div>
+                        <span class="font-playfair text-2xl font-bold">Ana Gabriel</span>
+                    </div>
+                    <p class="text-gray-300" data-translate="footer.description">Official fan cards celebrating the legendary Mexican artist.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4" data-translate="footer.quicklinks">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-gold transition-colors" data-translate="nav.home">Home</a></li>
+                        <li><a href="#cards" class="text-gray-300 hover:text-gold transition-colors" data-translate="nav.cards">Fan Cards</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-gold transition-colors" data-translate="nav.about">About</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-gold transition-colors" data-translate="nav.gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4" data-translate="footer.contact">Contact Us</h3>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-deep-red text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">WhatsApp</h4>
+                            <a href="https://wa.me/2349116764864" class="text-gray-300 hover:text-gold transition-colors">+234 911 676 4864</a>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm" data-translate="footer.whatsapp">Click to chat with us on WhatsApp</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-red-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    <span data-translate="footer.copyright">© </span>
+                    <span id="current-year"></span>
+                    <span data-translate="footer.rights"> Ana Gabriel Fan Cards. All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio element for music player -->
+    <audio id="audio-player" preload="metadata">
+        <source src="Ana Gabriel - No Te Hago Falta.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Translations object
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.cards': 'Fan Cards',
+                'nav.about': 'About',
+                'nav.gallery': 'Gallery',
+                'language.select': 'Select Language',
+                'contact.whatsapp': 'Contact via WhatsApp',
+                'hero.subtitle': 'Exclusive Fan Cards',
+                'hero.description': 'Own a piece of music history with our premium collection of Ana Gabriel fan cards. Limited edition designs celebrating the legendary Mexican artist.',
+                'cards.title': 'Fan Membership Tiers',
+                'cards.description': 'Join our exclusive Ana Gabriel fan community and unlock amazing benefits celebrating the legendary Mexican artist.',
+                'cards.starter': 'Starter',
+                'cards.join': 'Join Now',
+                'cards.basic.title': 'Basic Membership',
+                'cards.basic.newsletter': 'Exclusive newsletter',
+                'cards.basic.badge': 'Digital fan badge',
+                'cards.premium.title': 'Premium Membership',
+                'cards.premium.streams': 'Private stream invites',
+                'cards.premium.poster': 'Signed poster',
+                'cards.premium.basic': 'Everything in Basic',
+                'cards.vip.title': 'VIP Membership',
+                'cards.vip.premium': 'All Premium benefits',
+                'cards.vip.meetgreet': 'Meet and greet access',
+                'cards.vip.shoutout': 'Personal fan shout-out',
+                'about.title': 'About Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel is one of Mexico\'s most beloved and successful recording artists. With a career spanning over four decades, she has sold millions of records worldwide and touched the hearts of fans across Latin America and beyond.',
+                'about.paragraph2': 'Known for her powerful voice and emotional performances, Ana Gabriel has become an icon in Latin music, earning numerous awards and recognition for her contributions to the industry.',
+                'about.years': 'Years of Career',
+                'about.records': 'Records Sold',
+                'gallery.title': 'Photo Gallery',
+                'gallery.description': 'Memorable moments from Ana Gabriel\'s incredible journey',
+                'testimonials.title': 'What Fans Say',
+                'testimonials.subtitle': 'Hear from our satisfied fans',
+                'testimonials.review1': '"These fan cards are absolutely beautiful! The quality is amazing and they arrived perfectly packaged."',
+                'testimonials.review2': '"As a longtime Ana Gabriel fan, these cards mean everything to me. Worth every penny!"',
+                'testimonials.review3': '"Fast shipping and excellent customer service. The signature series is incredible!"',
+                'footer.description': 'Official fan cards celebrating the legendary Mexican artist.',
+                'footer.quicklinks': 'Quick Links',
+                'footer.contact': 'Contact Us',
+                'footer.whatsapp': 'Click to chat with us on WhatsApp',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. All rights reserved.',
+                'music.title': 'No Te Hago Falta'
+            },
+            es: {
+                'nav.home': 'Inicio',
+                'nav.cards': 'Tarjetas de Fan',
+                'nav.about': 'Acerca de',
+                'nav.gallery': 'Galería',
+                'language.select': 'Seleccionar Idioma',
+                'contact.whatsapp': 'Contactar por WhatsApp',
+                'hero.subtitle': 'Tarjetas de Fan Exclusivas',
+                'hero.description': 'Posee una pieza de la historia musical con nuestra colección premium de tarjetas de fan de Ana Gabriel. Diseños de edición limitada celebrando a la legendaria artista mexicana.',
+                'cards.title': 'Niveles de Membresía de Fans',
+                'cards.description': 'Únete a nuestra comunidad exclusiva de fans de Ana Gabriel y desbloquea beneficios increíbles celebrando a la legendaria artista mexicana.',
+                'cards.starter': 'Inicial',
+                'cards.join': 'Únete Ahora',
+                'cards.basic.title': 'Membresía Básica',
+                'cards.basic.newsletter': 'Newsletter exclusivo',
+                'cards.basic.badge': 'Insignia digital de fan',
+                'cards.premium.title': 'Membresía Premium',
+                'cards.premium.streams': 'Invitaciones a streams privados',
+                'cards.premium.poster': 'Póster firmado',
+                'cards.premium.basic': 'Todo lo de Básico',
+                'cards.vip.title': 'Membresía VIP',
+                'cards.vip.premium': 'Todos los beneficios Premium',
+                'cards.vip.meetgreet': 'Acceso a meet and greet',
+                'cards.vip.shoutout': 'Saludo personal de fan',
+                'about.title': 'Acerca de Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel es una de las artistas discográficas más queridas y exitosas de México. Con una carrera que abarca más de cuatro décadas, ha vendido millones de discos en todo el mundo y ha tocado los corazones de fanáticos en toda América Latina y más allá.',
+                'about.paragraph2': 'Conocida por su voz poderosa y actuaciones emotivas, Ana Gabriel se ha convertido en un ícono de la música latina, ganando numerosos premios y reconocimiento por sus contribuciones a la industria.',
+                'about.years': 'Años de Carrera',
+                'about.records': 'Discos Vendidos',
+                'gallery.title': 'Galería de Fotos',
+                'gallery.description': 'Momentos memorables del increíble viaje de Ana Gabriel',
+                'testimonials.title': 'Lo que Dicen los Fans',
+                'testimonials.subtitle': 'Escucha a nuestros fans satisfechos',
+                'testimonials.review1': '"¡Estas tarjetas de fan son absolutamente hermosas! La calidad es increíble y llegaron perfectamente empacadas."',
+                'testimonials.review2': '"Como fan de Ana Gabriel de toda la vida, estas tarjetas significan todo para mí. ¡Vale cada centavo!"',
+                'testimonials.review3': '"Envío rápido y excelente servicio al cliente. ¡La serie firma es increíble!"',
+                'footer.description': 'Tarjetas de fan oficiales celebrando a la legendaria artista mexicana.',
+                'footer.quicklinks': 'Enlaces Rápidos',
+                'footer.contact': 'Contáctanos',
+                'footer.whatsapp': 'Haz clic para chatear con nosotros en WhatsApp',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. Todos los derechos reservados.',
+                'music.title': 'No Te Hago Falta'
+            },
+            fr: {
+                'nav.home': 'Accueil',
+                'nav.cards': 'Cartes de Fan',
+                'nav.about': 'À propos',
+                'nav.gallery': 'Galerie',
+                'language.select': 'Sélectionner la langue',
+                'contact.whatsapp': 'Contacter via WhatsApp',
+                'hero.subtitle': 'Cartes de Fan Exclusives',
+                'hero.description': 'Possédez un morceau d\'histoire musicale avec notre collection premium de cartes de fan Ana Gabriel. Designs en édition limitée célébrant l\'artiste mexicaine légendaire.',
+                'cards.title': 'Niveaux d\'adhésion des fans',
+                'cards.description': 'Rejoignez notre communauté exclusive de fans d\'Ana Gabriel et débloquez des avantages incroyables célébrant l\'artiste mexicaine légendaire.',
+                'cards.starter': 'Débutant',
+                'cards.join': 'Adhérer maintenant',
+                'cards.basic.title': 'Adhésion de base',
+                'cards.basic.newsletter': 'Bulletin exclusif',
+                'cards.basic.badge': 'Badge de fan numérique',
+                'cards.premium.title': 'Adhésion Premium',
+                'cards.premium.streams': 'Invitations à des flux privés',
+                'cards.premium.poster': 'Affiche signée',
+                'cards.premium.basic': 'Tout dans Basic',
+                'cards.vip.title': 'Adhésion VIP',
+                'cards.vip.premium': 'Tous les avantages Premium',
+                'cards.vip.meetgreet': 'Accès aux rencontres',
+                'cards.vip.shoutout': 'Message personnel aux fans',
+                'about.title': 'À propos d\'Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel est l\'une des artistes d\'enregistrement les plus aimées et les plus réussies du Mexique. Avec une carrière s\'étendant sur plus de quatre décennies, elle a vendu des millions de disques dans le monde entier et a touché le cœur des fans à travers l\'Amérique latine et au-delà.',
+                'about.paragraph2': 'Connue pour sa voix puissante et ses performances émotionnelles, Ana Gabriel est devenue une icône de la musique latine, gagnant de nombreux prix et reconnaissances pour ses contributions à l\'industrie.',
+                'about.years': 'Années de Carrière',
+                'about.records': 'Disques Vendus',
+                'gallery.title': 'Galerie de Photos',
+                'gallery.description': 'Moments mémorables du voyage incroyable d\'Ana Gabriel',
+                'testimonials.title': 'Ce que Disent les Fans',
+                'testimonials.subtitle': 'Écoutez nos fans satisfaits',
+                'testimonials.review1': '"Ces cartes de fan sont absolument magnifiques ! La qualité est incroyable et elles sont arrivées parfaitement emballées."',
+                'testimonials.review2': '"En tant que fan d\'Ana Gabriel de longue date, ces cartes signifient tout pour moi. Ça vaut chaque centime !"',
+                'testimonials.review3': '"Expédition rapide et excellent service client. La série signature est incroyable !"',
+                'footer.description': 'Cartes de fan officielles célébrant l\'artiste mexicaine légendaire.',
+                'footer.quicklinks': 'Liens Rapides',
+                'footer.contact': 'Nous Contacter',
+                'footer.whatsapp': 'Cliquez pour discuter avec nous sur WhatsApp',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. Tous droits réservés.',
+                'music.title': 'No Te Hago Falta'
+            },
+            de: {
+                'nav.home': 'Startseite',
+                'nav.cards': 'Fan-Karten',
+                'nav.about': 'Über uns',
+                'nav.gallery': 'Galerie',
+                'language.select': 'Sprache auswählen',
+                'contact.whatsapp': 'Kontakt über WhatsApp',
+                'hero.subtitle': 'Exklusive Fan-Karten',
+                'hero.description': 'Besitzen Sie ein Stück Musikgeschichte mit unserer Premium-Sammlung von Ana Gabriel Fan-Karten. Limitierte Designs, die die legendäre mexikanische Künstlerin feiern.',
+                'cards.title': 'Fan-Mitgliedschaftsstufen',
+                'cards.description': 'Treten Sie unserer exklusiven Ana Gabriel Fan-Community bei und schalten Sie fantastische Vorteile frei, die die legendäre mexikanische Künstlerin feiern.',
+                'cards.starter': 'Anfänger',
+                'cards.join': 'Jetzt beitreten',
+                'cards.basic.title': 'Basis-Mitgliedschaft',
+                'cards.basic.newsletter': 'Exklusiver Newsletter',
+                'cards.basic.badge': 'Digitales Fan-Abzeichen',
+                'cards.premium.title': 'Premium-Mitgliedschaft',
+                'cards.premium.streams': 'Private Stream-Einladungen',
+                'cards.premium.poster': 'Signiertes Poster',
+                'cards.premium.basic': 'Alles in Basic',
+                'cards.vip.title': 'VIP-Mitgliedschaft',
+                'cards.vip.premium': 'Alle Premium-Vorteile',
+                'cards.vip.meetgreet': 'Meet and Greet-Zugang',
+                'cards.vip.shoutout': 'Persönlicher Fan-Shoutout',
+                'about.title': 'Über Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel ist eine der beliebtesten und erfolgreichsten Aufnahmekünstlerinnen Mexikos. Mit einer Karriere von über vier Jahrzehnten hat sie Millionen von Platten weltweit verkauft und die Herzen von Fans in ganz Lateinamerika und darüber hinaus berührt.',
+                'about.paragraph2': 'Bekannt für ihre kraftvolle Stimme und emotionalen Auftritte, ist Ana Gabriel zu einer Ikone der lateinamerikanischen Musik geworden und hat zahlreiche Auszeichnungen und Anerkennung für ihre Beiträge zur Industrie erhalten.',
+                'about.years': 'Jahre Karriere',
+                'about.records': 'Verkaufte Platten',
+                'gallery.title': 'Fotogalerie',
+                'gallery.description': 'Unvergessliche Momente aus Ana Gabriels unglaublicher Reise',
+                'testimonials.title': 'Was Fans Sagen',
+                'testimonials.subtitle': 'Hören Sie von unseren zufriedenen Fans',
+                'testimonials.review1': '"Diese Fan-Karten sind absolut wunderschön! Die Qualität ist erstaunlich und sie kamen perfekt verpackt an."',
+                'testimonials.review2': '"Als langjähriger Ana Gabriel Fan bedeuten mir diese Karten alles. Jeden Cent wert!"',
+                'testimonials.review3': '"Schneller Versand und exzellenter Kundenservice. Die Signatur-Serie ist unglaublich!"',
+                'footer.description': 'Offizielle Fan-Karten, die die legendäre mexikanische Künstlerin feiern.',
+                'footer.quicklinks': 'Schnelle Links',
+                'footer.contact': 'Kontaktieren Sie uns',
+                'footer.whatsapp': 'Klicken Sie, um mit uns auf WhatsApp zu chatten',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. Alle Rechte vorbehalten.',
+                'music.title': 'No Te Hago Falta'
+            },
+            it: {
+                'nav.home': 'Home',
+                'nav.cards': 'Carte Fan',
+                'nav.about': 'Chi siamo',
+                'nav.gallery': 'Galleria',
+                'language.select': 'Seleziona lingua',
+                'contact.whatsapp': 'Contatta via WhatsApp',
+                'hero.subtitle': 'Carte Fan Esclusive',
+                'hero.description': 'Possiedi un pezzo di storia musicale con la nostra collezione premium di carte fan di Ana Gabriel. Design in edizione limitata che celebrano la leggendaria artista messicana.',
+                'cards.title': 'Livelli di adesione dei fan',
+                'cards.description': 'Unisciti alla nostra esclusiva community di fan di Ana Gabriel e sblocca incredibili vantaggi che celebrano la leggendaria artista messicana.',
+                'cards.starter': 'Iniziale',
+                'cards.join': 'Iscriviti ora',
+                'cards.basic.title': 'Adesione di base',
+                'cards.basic.newsletter': 'Newsletter esclusiva',
+                'cards.basic.badge': 'Badge fan digitale',
+                'cards.premium.title': 'Adesione Premium',
+                'cards.premium.streams': 'Inviti a stream privati',
+                'cards.premium.poster': 'Poster firmato',
+                'cards.premium.basic': 'Tutto in Basic',
+                'cards.vip.title': 'Adesione VIP',
+                'cards.vip.premium': 'Tutti i vantaggi Premium',
+                'cards.vip.meetgreet': 'Accesso Meet and Greet',
+                'cards.vip.shoutout': 'Messaggio personale ai fan',
+                'about.title': 'Su Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel è una delle artiste discografiche più amate e di successo del Messico. Con una carriera che abbraccia oltre quattro decenni, ha venduto milioni di dischi in tutto il mondo e ha toccato i cuori dei fan in tutta l\'America Latina e oltre.',
+                'about.paragraph2': 'Conosciuta per la sua voce potente e le performance emotive, Ana Gabriel è diventata un\'icona della musica latina, guadagnando numerosi premi e riconoscimenti per i suoi contributi all\'industria.',
+                'about.years': 'Anni di Carriera',
+                'about.records': 'Dischi Venduti',
+                'gallery.title': 'Galleria Fotografica',
+                'gallery.description': 'Momenti memorabili dell\'incredibile viaggio di Ana Gabriel',
+                'testimonials.title': 'Cosa Dicono i Fan',
+                'testimonials.subtitle': 'Ascolta i nostri fan soddisfatti',
+                'testimonials.review1': '"Queste carte fan sono assolutamente bellissime! La qualità è incredibile e sono arrivate perfettamente confezionate."',
+                'testimonials.review2': '"Come fan di Ana Gabriel di lunga data, queste carte significano tutto per me. Vale ogni centesimo!"',
+                'testimonials.review3': '"Spedizione veloce e eccellente servizio clienti. La serie firma è incredibile!"',
+                'footer.description': 'Carte fan ufficiali che celebrano la leggendaria artista messicana.',
+                'footer.quicklinks': 'Link Rapidi',
+                'footer.contact': 'Contattaci',
+                'footer.whatsapp': 'Clicca per chattare con noi su WhatsApp',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. Tutti i diritti riservati.',
+                'music.title': 'No Te Hago Falta'
+            },
+            pt: {
+                'nav.home': 'Início',
+                'nav.cards': 'Cartões de Fã',
+                'nav.about': 'Sobre',
+                'nav.gallery': 'Galeria',
+                'language.select': 'Selecionar idioma',
+                'contact.whatsapp': 'Contatar via WhatsApp',
+                'hero.subtitle': 'Cartões de Fã Exclusivos',
+                'hero.description': 'Possua um pedaço da história musical com nossa coleção premium de cartões de fã da Ana Gabriel. Designs de edição limitada celebrando a lendária artista mexicana.',
+                'cards.title': 'Níveis de adesão de fãs',
+                'cards.description': 'Junte-se à nossa comunidade exclusiva de fãs de Ana Gabriel e desbloqueie benefícios incríveis celebrando a lendária artista mexicana.',
+                'cards.starter': 'Iniciante',
+                'cards.join': 'Junte-se agora',
+                'cards.basic.title': 'Adesão básica',
+                'cards.basic.newsletter': 'Boletim informativo exclusivo',
+                'cards.basic.badge': 'Crachá de fã digital',
+                'cards.premium.title': 'Adesão Premium',
+                'cards.premium.streams': 'Convites para transmissões privadas',
+                'cards.premium.poster': 'Pôster assinado',
+                'cards.premium.basic': 'Tudo em Basic',
+                'cards.vip.title': 'Adesão VIP',
+                'cards.vip.premium': 'Todos os benefícios Premium',
+                'cards.vip.meetgreet': 'Acesso para conhecer e cumprimentar',
+                'cards.vip.shoutout': 'Mensagem pessoal para fãs',
+                'about.title': 'Sobre Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel é uma das artistas de gravação mais amadas e bem-sucedidas do México. Com uma carreira que abrange mais de quatro décadas, ela vendeu milhões de discos mundialmente e tocou os corações de fãs em toda a América Latina e além.',
+                'about.paragraph2': 'Conhecida por sua voz poderosa e performances emocionais, Ana Gabriel se tornou um ícone da música latina, ganhando numerosos prêmios e reconhecimento por suas contribuições à indústria.',
+                'about.years': 'Anos de Carreira',
+                'about.records': 'Discos Vendidos',
+                'gallery.title': 'Galeria de Fotos',
+                'gallery.description': 'Momentos memoráveis da jornada incrível da Ana Gabriel',
+                'testimonials.title': 'O que os Fãs Dizem',
+                'testimonials.subtitle': 'Ouça nossos fãs satisfeitos',
+                'testimonials.review1': '"Estes cartões de fã são absolutamente lindos! A qualidade é incrível e chegaram perfeitamente embalados."',
+                'testimonials.review2': '"Como fã da Ana Gabriel há muito tempo, estes cartões significam tudo para mim. Vale cada centavo!"',
+                'testimonials.review3': '"Envio rápido e excelente atendimento ao cliente. A série assinatura é incrível!"',
+                'footer.description': 'Cartões de fã oficiais celebrando a lendária artista mexicana.',
+                'footer.quicklinks': 'Links Rápidos',
+                'footer.contact': 'Entre em Contato',
+                'footer.whatsapp': 'Clique para conversar conosco no WhatsApp',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. Todos os direitos reservados.',
+                'music.title': 'No Te Hago Falta'
+            },
+            ru: {
+                'nav.home': 'Главная',
+                'nav.cards': 'Фан-карты',
+                'nav.about': 'О нас',
+                'nav.gallery': 'Галерея',
+                'language.select': 'Выбрать язык',
+                'contact.whatsapp': 'Связаться через WhatsApp',
+                'hero.subtitle': 'Эксклюзивные Фан-карты',
+                'hero.description': 'Владейте частью музыкальной истории с нашей премиум коллекцией фан-карт Аны Габриэль. Дизайны ограниченного издания, празднующие легендарную мексиканскую артистку.',
+                'cards.title': 'Уровни членства для фанатов',
+                'cards.description': 'Присоединяйтесь к нашему эксклюзивному фан-сообществу Аны Габриэль и откройте для себя потрясающие преимущества, прославляющие легендарную мексиканскую артистку.',
+                'cards.starter': 'Начинающий',
+                'cards.join': 'Присоединиться сейчас',
+                'cards.basic.title': 'Базовое членство',
+                'cards.basic.newsletter': 'Эксклюзивная рассылка',
+                'cards.basic.badge': 'Цифровой значок фаната',
+                'cards.premium.title': 'Премиум членство',
+                'cards.premium.streams': 'Приглашения на частные трансляции',
+                'cards.premium.poster': 'Подписанный плакат',
+                'cards.premium.basic': 'Все в Basic',
+                'cards.vip.title': 'VIP членство',
+                'cards.vip.premium': 'Все премиальные преимущества',
+                'cards.vip.meetgreet': 'Доступ к встречам и приветствиям',
+                'cards.vip.shoutout': 'Персональный привет фанатам',
+                'about.title': 'О Ане Габриэль',
+                'about.paragraph1': 'Ана Габриэль - одна из самых любимых и успешных записывающих артисток Мексики. С карьерой, охватывающей более четырех десятилетий, она продала миллионы пластинок по всему миру и тронула сердца поклонников по всей Латинской Америке и за её пределами.',
+                'about.paragraph2': 'Известная своим мощным голосом и эмоциональными выступлениями, Ана Габриэль стала иконой латинской музыки, получив множество наград и признание за свой вклад в индустрию.',
+                'about.years': 'Лет Карьеры',
+                'about.records': 'Проданных Пластинок',
+                'gallery.title': 'Фотогалерея',
+                'gallery.description': 'Памятные моменты невероятного путешествия Аны Габриэль',
+                'testimonials.title': 'Что Говорят Фанаты',
+                'testimonials.subtitle': 'Послушайте наших довольных фанатов',
+                'testimonials.review1': '"Эти фан-карты абсолютно прекрасны! Качество потрясающее, и они пришли идеально упакованными."',
+                'testimonials.review2': '"Как давний фанат Аны Габриэль, эти карты значат для меня всё. Стоят каждой копейки!"',
+                'testimonials.review3': '"Быстрая доставка и отличное обслуживание клиентов. Серия подписей невероятна!"',
+                'footer.description': 'Официальные фан-карты, празднующие легендарную мексиканскую артистку.',
+                'footer.quicklinks': 'Быстрые Ссылки',
+                'footer.contact': 'Связаться с Нами',
+                'footer.whatsapp': 'Нажмите, чтобы пообщаться с нами в WhatsApp',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. Все права защищены.',
+                'music.title': 'No Te Hago Falta'
+            },
+            zh: {
+                'nav.home': '首页',
+                'nav.cards': '粉丝卡',
+                'nav.about': '关于',
+                'nav.gallery': '画廊',
+                'language.select': '选择语言',
+                'contact.whatsapp': '通过WhatsApp联系',
+                'hero.subtitle': '独家粉丝卡',
+                'hero.description': '拥有我们Ana Gabriel粉丝卡高级收藏的一部分音乐历史。限量版设计庆祝这位传奇的墨西哥艺术家。',
+                'cards.title': '粉丝会员等级',
+                'cards.description': '加入我们独家的Ana Gabriel粉丝社区，解锁令人惊叹的福利，庆祝这位传奇的墨西哥艺术家。',
+                'cards.starter': '入门',
+                'cards.join': '立即加入',
+                'cards.basic.title': '基本会员',
+                'cards.basic.newsletter': '独家新闻通讯',
+                'cards.basic.badge': '数字粉丝徽章',
+                'cards.premium.title': '高级会员',
+                'cards.premium.streams': '私人流媒体邀请',
+                'cards.premium.poster': '签名海报',
+                'cards.premium.basic': '基本版中的一切',
+                'cards.vip.title': '贵宾会员',
+                'cards.vip.premium': '所有高级福利',
+                'cards.vip.meetgreet': '见面会访问权限',
+                'cards.vip.shoutout': '个人粉丝欢呼',
+                'about.title': '关于Ana Gabriel',
+                'about.paragraph1': 'Ana Gabriel是墨西哥最受喜爱和最成功的录音艺术家之一。她的职业生涯跨越四十多年，在全世界销售了数百万张唱片，触动了整个拉丁美洲及其他地区粉丝的心。',
+                'about.paragraph2': '以其强有力的声音和情感表演而闻名，Ana Gabriel已成为拉丁音乐的偶像，因其对行业的贡献获得了众多奖项和认可。',
+                'about.years': '职业年数',
+                'about.records': '销售唱片',
+                'gallery.title': '照片画廊',
+                'gallery.description': 'Ana Gabriel令人难以置信的旅程中的难忘时刻',
+                'testimonials.title': '粉丝评价',
+                'testimonials.subtitle': '听听我们满意的粉丝',
+                'testimonials.review1': '"这些粉丝卡绝对美丽！质量令人惊叹，包装完美。"',
+                'testimonials.review2': '"作为Ana Gabriel的长期粉丝，这些卡对我来说意义重大。物有所值！"',
+                'testimonials.review3': '"快速发货和优秀的客户服务。签名系列令人难以置信！"',
+                'footer.description': '庆祝传奇墨西哥艺术家的官方粉丝卡。',
+                'footer.quicklinks': '快速链接',
+                'footer.contact': '联系我们',
+                'footer.whatsapp': '点击在WhatsApp上与我们聊天',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. 版权所有。',
+                'music.title': 'No Te Hago Falta'
+            },
+            ja: {
+                'nav.home': 'ホーム',
+                'nav.cards': 'ファンカード',
+                'nav.about': 'について',
+                'nav.gallery': 'ギャラリー',
+                'language.select': '言語を選択',
+                'contact.whatsapp': 'WhatsAppで連絡',
+                'hero.subtitle': '限定ファンカード',
+                'hero.description': 'Ana Gabrielファンカードのプレミアムコレクションで音楽史の一部を所有しましょう。伝説のメキシコアーティストを祝う限定版デザイン。',
+                'cards.title': 'ファン会員レベル',
+                'cards.description': '私たちの独占的なアナ・ガブリエルファンコミュニティに参加して、伝説的なメキシコのアーティストを祝う素晴らしい特典をアンロックしてください。',
+                'cards.starter': 'スターター',
+                'cards.join': '今すぐ参加',
+                'cards.basic.title': 'ベーシック会員',
+                'cards.basic.newsletter': '限定ニュースレター',
+                'cards.basic.badge': 'デジタルファンバッジ',
+                'cards.premium.title': 'プレミアム会員',
+                'cards.premium.streams': 'プライベートストリームへの招待',
+                'cards.premium.poster': 'サイン入りポスター',
+                'cards.premium.basic': 'ベーシックのすべて',
+                'cards.vip.title': 'VIP会員',
+                'cards.vip.premium': 'すべてのプレミアム特典',
+                'cards.vip.meetgreet': 'ミートアンドグリートアクセス',
+                'cards.vip.shoutout': 'パーソナルファンシャウトアウト',
+                'about.title': 'アナ・ガブリエルについて',
+                'about.paragraph1': 'アナ・ガブリエルは、メキシコで最も愛され、成功したレコーディングアーティストの一人です。40年以上にわたるキャリアで、世界中で数百万枚のレコードを売り上げ、ラテンアメリカとその他の地域のファンの心を動かしてきました。',
+                'about.paragraph2': '力強い声と感情的なパフォーマンスで知られるアナ・ガブリエルは、ラテン音楽のアイコンとなり、業界への貢献で数多くの賞と認知を得ています。',
+                'about.years': 'キャリア年数',
+                'about.records': '販売レコード',
+                'gallery.title': 'フォトギャラリー',
+                'gallery.description': 'アナ・ガブリエルの素晴らしい旅路の記憶に残る瞬間',
+                'testimonials.title': 'ファンの声',
+                'testimonials.subtitle': '満足したファンの声を聞く',
+                'testimonials.review1': '"これらのファンカードは絶対に美しいです！品質が素晴らしく、完璧に梱包されて届きました。"',
+                'testimonials.review2': '"長年のアナ・ガブリエルファンとして、これらのカードは私にとってすべてを意味します。一銭の価値があります！"',
+                'testimonials.review3': '"迅速な配送と優れたカスタマーサービス。サインシリーズは信じられません！"',
+                'footer.description': '伝説のメキシコアーティストを祝う公式ファンカード。',
+                'footer.quicklinks': 'クイ���クリンク',
+                'footer.contact': 'お問い合わせ',
+                'footer.whatsapp': 'WhatsAppでチャットするにはクリック',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. 全著作権所有。',
+                'music.title': 'No Te Hago Falta'
+            },
+            ar: {
+                'nav.home': 'الرئيسية',
+                'nav.cards': 'بطاقات المعجبين',
+                'nav.about': 'حول',
+                'nav.gallery': 'المعرض',
+                'language.select': 'اختر اللغة',
+                'contact.whatsapp': 'تواصل عبر واتساب',
+                'hero.subtitle': 'بطاقات معجبين حصرية',
+                'hero.description': 'امتلك قطعة من التاريخ الموسيقي مع مجموعتنا المميزة من بطاقات معجبي آنا غابرييل. تصاميم إصدار محدود تحتفل بالفنانة المكسيكية الأسطورية.',
+                'cards.title': 'مستويات عضوية المعجبين',
+                'cards.description': 'انضم إلى مجتمع معجبي آنا غابرييل الحصري وافتح مزايا مذهلة تحتفل بالفنانة المكسيكية الأسطورية.',
+                'cards.starter': 'مبتدئ',
+                'cards.join': 'انضم الآن',
+                'cards.basic.title': 'عضوية أساسية',
+                'cards.basic.newsletter': 'رسالة إخبارية حصرية',
+                'cards.basic.badge': 'شارة معجب رقمية',
+                'cards.premium.title': 'عضوية مميزة',
+                'cards.premium.streams': 'دعوات لتدفقات خاصة',
+                'cards.premium.poster': 'ملصق موقع',
+                'cards.premium.basic': 'كل شيء في الأساسية',
+                'cards.vip.title': 'عضوية VIP',
+                'cards.vip.premium': 'جميع المزايا المميزة',
+                'cards.vip.meetgreet': 'الوصول للقاء والترحيب',
+                'cards.vip.shoutout': 'هتاف شخصي للمعجبين',
+                'about.title': 'حول آنا غابرييل',
+                'about.paragraph1': 'آنا غابرييل هي واحدة من أكثر فناني التسجيل المحبوبين والناجحين في المكسيك. مع مسيرة تمتد لأكثر من أربعة عقود، باعت ملايين الأسطوانات حول العالم ولمست قلوب المعجبين في جميع أنحاء أمريكا اللاتينية وخارجها.',
+                'about.paragraph2': 'معروفة بصوتها القوي وأداءاتها العاطفية، أصبحت آنا غابرييل أيقونة في الموسيقى اللاتينية، حاصلة على العديد من الجوائز والاعتراف لمساهماتها في الصناعة.',
+                'about.years': 'سنوات المسيرة',
+                'about.records': 'الأسطوانات المباعة',
+                'gallery.title': 'معرض الصور',
+                'gallery.description': 'لحظات لا تُنسى من رحلة آنا غابرييل المذهلة',
+                'testimonials.title': 'ما يقوله المعجبون',
+                'testimonials.subtitle': 'استمع إلى معجبينا الراضين',
+                'testimonials.review1': '"هذه البطاقات جميلة جداً! الجودة مذهلة ووصلت معبأة بشكل مثالي."',
+                'testimonials.review2': '"كمعجب قديم بآنا غابرييل، هذه البطاقات تعني لي كل شيء. تستحق كل قرش!"',
+                'testimonials.review3': '"شحن سريع وخدمة عملاء ممتازة. سلسلة التوقيع لا تصدق!"',
+                'footer.description': 'بطاقات معجبين رسمية تحتفل بالفنانة المكسيكية الأسطورية.',
+                'footer.quicklinks': 'روابط سريعة',
+                'footer.contact': 'اتصل بنا',
+                'footer.whatsapp': 'انقر للدردشة معنا على واتساب',
+                'footer.copyright': '© ',
+                'footer.rights': ' Ana Gabriel Fan Cards. جميع الحقوق محفوظة.',
+                'music.title': 'No Te Hago Falta'
+            }
+        };
+
+        // Language functionality
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        function detectUserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.split('-')[0];
+            
+            if (translations[langCode]) {
+                return langCode;
+            }
+            return 'en';
+        }
+
+        function translatePage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            
+            // Update current language display
+            const langMap = {
+                'en': 'EN', 'es': 'ES', 'fr': 'FR', 'de': 'DE',
+                'it': 'IT', 'pt': 'PT', 'ru': 'RU', 'zh': 'ZH',
+                'ja': 'JA', 'ar': 'AR'
+            };
+            document.getElementById('current-language').textContent = langMap[lang];
+            
+            // Translate all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' && element.type === 'text') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Handle RTL languages
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+                document.body.classList.add('rtl');
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.body.classList.remove('rtl');
+            }
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('selectedLanguage')) {
+                currentLanguage = detectUserLanguage();
+            }
+            translatePage(currentLanguage);
+        });
+
+        // Language dropdown functionality
+        const languageBtn = document.getElementById('language-btn');
+        const languageDropdown = document.getElementById('language-dropdown');
+
+        languageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', () => {
+            languageDropdown.classList.remove('active');
+        });
+
+        // Language option selection
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = option.getAttribute('data-lang');
+                translatePage(lang);
+                languageDropdown.classList.remove('active');
+                closeMobileMenuFunc();
+            });
+        });
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+
+        // Close mobile menu when clicking on navigation links
+        document.querySelectorAll('.mobile-menu-item').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenuFunc();
+            });
+        });
+
+        // Tier Selection WhatsApp Redirect
+        function redirectToWhatsApp(tier) {
+            const phoneNumber = '2349116764864';
+            const messages = {
+                'Basic': `Hi! I'm interested in the Basic Membership tier ($9.99/month) for Ana Gabriel Fan Cards. Can you provide more information?`,
+                'Premium': `Hi! I'm interested in the Premium Membership tier ($24.99/month) for Ana Gabriel Fan Cards. Can you provide more information?`,
+                'VIP': `Hi! I'm interested in the VIP Membership tier ($49.99/month) for Ana Gabriel Fan Cards. Can you provide more information?`
+            };
+            
+            const message = encodeURIComponent(messages[tier]);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add event listeners to tier buttons
+        document.querySelectorAll('.tier-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const tier = this.getAttribute('data-tier');
+                redirectToWhatsApp(tier);
+            });
+        });
+
+        // Music Player Functionality (Simplified for single song)
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const totalTimeEl = document.getElementById('total-time');
+        const volumeSlider = document.getElementById('volume-slider');
+        const albumArt = document.getElementById('album-art');
+        const minimizePlayer = document.getElementById('minimize-player');
+        const minimizedPlayer = document.getElementById('minimized-player');
+        const expandPlayer = document.getElementById('expand-player');
+        const musicPlayer = document.getElementById('music-player');
+
+        let isPlaying = false;
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function togglePlayPause() {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playPauseIcon.className = 'fas fa-play';
+                albumArt.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                audioPlayer.play();
+                playPauseIcon.className = 'fas fa-pause';
+                albumArt.classList.add('playing');
+                isPlaying = true;
+            }
+        }
+
+        function updateProgress() {
+            if (audioPlayer.duration) {
+                const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+                currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+            }
+        }
+
+        function setProgress(e) {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioPlayer.duration;
+            audioPlayer.currentTime = (clickX / width) * duration;
+        }
+
+        // Event listeners for music player
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        progressContainer.addEventListener('click', setProgress);
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+        
+        audioPlayer.addEventListener('loadedmetadata', () => {
+            totalTimeEl.textContent = formatTime(audioPlayer.duration);
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            audioPlayer.volume = e.target.value / 100;
+        });
+
+        minimizePlayer.addEventListener('click', () => {
+            musicPlayer.classList.add('hidden');
+            minimizedPlayer.classList.remove('hidden');
+        });
+
+        expandPlayer.addEventListener('click', () => {
+            minimizedPlayer.classList.add('hidden');
+            musicPlayer.classList.remove('hidden');
+        });
+
+        // Initialize music player
+        audioPlayer.volume = 0.7;
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/80');
+            } else {
+                navbar.classList.add('bg-white/80');
+                navbar.classList.remove('bg-white/95');
+            }
+        });
+
+        // Animate on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Handle escape key to close mobile menu and language dropdown
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenuFunc();
+                languageDropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
